@@ -35,9 +35,11 @@ while True:
 
         if rectangle.any:
             status = 1
+            # Extract the images with object from the video
             cv2.imwrite(f"images/{count}.png", frame)
             count = count + 1
             all_images = glob.glob("images/*.png")
+            # Picks only the image that has the half value of the total images
             index = int(len(all_images) / 2)
             image_with_object = all_images[index]
 
@@ -45,7 +47,7 @@ while True:
     status_list = status_list[-2:]
 
     if status_list[0] == 1 and status_list[1] == 0:
-        send_email()
+        send_email(image_with_object)
 
     print(status_list)
 
