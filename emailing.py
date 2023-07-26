@@ -8,6 +8,7 @@ EMAIL_RECEIVER = "The email address that will receive the message (doesn't need 
 
 
 def send_email(image_path):
+    print("send_email function started")
     # Creates an email object instance
     email_message = EmailMessage()
     email_message["Subject"] = "Something showed up in the camera!"
@@ -23,7 +24,7 @@ def send_email(image_path):
     gmail.login(EMAIL_SENDER, PASSWORD)
     gmail.sendmail(EMAIL_SENDER, EMAIL_RECEIVER, email_message.as_string())
     gmail.quit()
-
+    print("send_email function ended")
 
 if __name__ == "__main__":
     send_email(image_path="images/19.png")
