@@ -65,7 +65,8 @@ while True:
         clean_thread.daemon = True
         email_thread.start()
 
-    print(status_list)
+    # Uncomment this to have access to the status_list
+    # print(status_list)
 
     cv2.imshow("Video", frame)
     key = cv2.waitKey(1)

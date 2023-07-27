@@ -4,7 +4,7 @@ from email.message import EmailMessage
 
 PASSWORD = "your email app password"
 EMAIL_SENDER = "The email address that will send the message (needs to be gmail)"
-EMAIL_RECEIVER = "The email address that will receive the message (doesn't need to be gmail) "
+EMAIL_RECEIVER = "The email address that will receive the message (doesn't need to be gmail)"
 
 
 def send_email(image_path):
@@ -25,6 +25,7 @@ def send_email(image_path):
     gmail.sendmail(EMAIL_SENDER, EMAIL_RECEIVER, email_message.as_string())
     gmail.quit()
     print("send_email function ended")
+
 
 if __name__ == "__main__":
     send_email(image_path="images/19.png")
